@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>at.favre.lib</groupId>
+    <artifactId>checkstyle-config</artifactId>
+    <version>1</version>
+    <packaging>jar</packaging>
+
+    <name>Common Checkstyle Configuration</name>
+    <description>Externalized checkstyle configuration which can be used in other Maven projects.</description>
+    <url>https://github.com/patrickfav/checkstyle-config</url>
+    <inceptionYear>2019</inceptionYear>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-patrickfav</id>
+            <name>patrickfav-checkstyle-config</name>
+            <url>https://api.bintray.com/maven/patrickfav/maven/checkstyle-config/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <developers>
+        <developer>
+            <id>patrickfav</id>
+            <name>Patrick Favre-Bulle</name>
+            <email>patrick.favrebulle@gmail.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>https://github.com/patrickfav/checkstyle-config.git</connection>
+        <developerConnection>https://github.com/patrickfav/checkstyle-config.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/patrickfav/checkstyle-config</url>
+    </scm>
+</project>

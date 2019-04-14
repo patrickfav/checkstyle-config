@@ -1,0 +1,41 @@
+# To let the CI execute the maven wrapper, use this command and push the change:
+#    git update-index --chmod=+x mvnw
+
+sudo: false # route your build to the container-based infrastructure for a faster build
+language: java
+install: true
+jdk:
+  - oraclejdk8
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_b093246767c9_key -iv $encrypted_b093246767c9_iv -in ci-settings.xml.enc -out ci-settings.xml -d
+
+script:
+  - ./mvnw clean install -X
+
+deploy:
+  - provider: script
+    script: ./mvnw -s ci-settings.xml deploy -X
+    skip_cleanup: true
+    on:
+      branch: master
+      tags: true
+  - provider: releases
+    api_key:
+      secure: "nJuoMS1dtqw9s6jY7dgUmhucXsDaXtu3bL7e97pdXh3bunAIzdL91sDLMnXLxeVUARDc9j7KslHubISjt7E6L9C6no5W6O+N62Y6DhHTvYeTgZ6dZcT6wsdOs6l6XLwgI6VRklyRwuyxAWECOCCm+EE7Yo1bzOmIOhTbJ9hVWxsUbHgugzE5ZMiEHGnpsUN0WjlbxPZiHXBRITNlzX/ypcrHkfMJhXo4j5Go8SWE/U7aUspQKNR0A33s+4EZwve8ONGYjbJLGNEA4Jf8/huuzrBN1XTr4clQt3g8bfJ2xXph3eneNZN/nxEUBImc6MqTCnDaDb1zZAQVCA0GMUzuxrb6eaC884UpeQVbXlcZZHtN0PY/fpoGGmT9zHv4RzlmoTcht965n5vRLDzugF7T/lU2fi4jyAwK+LNqDkYfB1N4p9a7cQLwnufnWwt2n8vZdqiLFwuFrsNhafMkA8Xtr4dtr012atLCIRi1Nk7PSdUADNDzLN78Vbcp7kPfD1sJGCDbPX5p66WEJXHKTQW2Fvjz6Yg2pReAYhRDLwdKBrk2I7TP3ZQbgczcGDMdyCtSLq2wq9ggNVYr/7N92cneBrg9WZUp8Xd4iTIQO0bRK1MhArhsWzVh8B7TEelUve1YCjuUgnxWSORb9b9WhZXRTNMOJg0gl2wqBE9LtzByAKw="
+    file_glob: true
+    file:
+      - "target/*.jar"
+    skip_cleanup: true
+    on:
+      branch: master
+      tags: true
+
+cache:
+  directories:
+    - $HOME/.m2
+
+notifications:
+  slack:
+    secure: "N5i1GjZPezgeP6ncG2gyTgo/HcGp2qckF3n/m5QM5CG+fnG7J4ECDZQo+8kSXdY2VhHvycZ3UHmPzwpWzCLvF/6Rq3eJBgHpM6KTXC3Ma3HQOnEO7GsrWL2QLbYi1fj8HSP7h39u6j2RT12v7lxFpmP6mXhQInsZfgmZ3nQO1cQUPWPt3+ihaCm9mhPu3weqJesQTXqGNxkIstc8KZR8Qy1sDvt4AQOYnGOE9hAClbgnrYwqCwyVL4eiV+OrYQvL3mBbpNBN+81pUJXl5ZdaiZSjAwgJVGd0ruFasuzWVDuQU/yyJI0zIWxiJhwJyTD2BXwyUIDtwyLXk1m1CMC7aIDs7MBSW8Z94k8mRxhw5YAjAwoUkdjCeoZvpLL8V9hp8smqfogrEYUdlbzLgKpg+KuTnZwJ+dTo4ovcWO3Zh4b89WP4A7rNqaQTNr3GXT4ThD775w6qdyzhj9sXILLonUl42UMJvrxUUyygpubZHEzSsBqacnEZY+sfZk/V9jWBtEOg3HYeVi9LDR8VJkWC/EtjtMXapJRout1K8NY9reMJxb6Rl1rbn80xaOHpxYjsVJ3U0g5cYQZDTg7Rwy0FpAc7HCXuuDrxNVHxUybyCPVBijAL+11wurmC4m/lHIdXw1L/SAOSNPxWmQDJ8nwynIwG/iidcB5rgxT+DTL+3tw="
+  email: false
