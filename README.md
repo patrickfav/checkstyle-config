@@ -1,9 +1,15 @@
+![id-mask logo](misc/icon_sm.png)
+
 # Common Checkstyle Config
 
 Externalized checkstyle configuration which can be used in other Maven projects.
 
 [![Download](https://api.bintray.com/packages/patrickfav/maven/checkstyle-config/images/download.svg)](https://bintray.com/patrickfav/maven/checkstyle-config/_latestVersion)
 [![Build Status](https://travis-ci.org/patrickfav/checkstyle-config.svg?branch=master)](https://travis-ci.org/patrickfav/checkstyle-config)
+
+## Description
+
+This is a hand-picked, incrementally improved checkstyle configuration. It is more on the liberal side as I believe tools should work for the user not the other way around. Code style is subjective and this one might not be for you.
 
 ## Usage
 
