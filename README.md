@@ -1,6 +1,7 @@
-![id-mask logo](misc/icon_sm.png)
-
 # Common Checkstyle Config
+
+<img src="https://github.com/patrickfav/checkstyle-config/blob/master/misc/icon_sm.png?raw=true" align="right"
+     alt="Logo" width="128" height="128">
 
 Externalized checkstyle configuration which can be used in other Maven projects.
 
