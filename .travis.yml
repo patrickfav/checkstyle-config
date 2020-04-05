@@ -4,7 +4,7 @@
 language: java
 install: true
 jdk:
-  - oraclejdk8
+  - oraclejdk11
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_073a412aed2d_key -iv $encrypted_073a412aed2d_iv -in ci-settings.xml.enc -out ci-settings.xml -d
