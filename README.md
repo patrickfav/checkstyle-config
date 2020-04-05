@@ -46,7 +46,7 @@ See this [stackoverflow.com post](https://stackoverflow.com/a/19690484/774398) f
 
 #### IntelliJ
 
-If you are using the [checkstyle plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea) for [IntelliJ](https://www.jetbrains.com/idea/) (which you should). You will find a copy of the configuration in the `/taget` folder called `checkstyle-checker.xml`. 
+If you are using the [checkstyle plugin](https://plugins.jetbrains.com/plugin/1065-checkstyle-idea) for [IntelliJ](https://www.jetbrains.com/idea/) (which you should). You will find a copy of the configuration in the `/target` folder called `checkstyle-checker.xml`. 
 
 # License
 
