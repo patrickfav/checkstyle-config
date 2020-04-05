@@ -6,7 +6,7 @@
 
     <groupId>at.favre.lib</groupId>
     <artifactId>checkstyle-config</artifactId>
-    <version>2</version>
+    <version>3</version>
     <packaging>jar</packaging>
 
     <name>Common Checkstyle Configuration</name>
