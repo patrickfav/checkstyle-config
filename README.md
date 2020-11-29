@@ -6,7 +6,7 @@
 Externalized checkstyle configuration which can be used in other Maven projects.
 
 [![Download](https://api.bintray.com/packages/patrickfav/maven/checkstyle-config/images/download.svg)](https://bintray.com/patrickfav/maven/checkstyle-config/_latestVersion)
-[![Build Status](https://travis-ci.org/patrickfav/checkstyle-config.svg?branch=master)](https://travis-ci.org/patrickfav/checkstyle-config)
+[![Build Status](https://travis-ci.com/patrickfav/checkstyle-config.svg?branch=master)](https://travis-ci.com/patrickfav/checkstyle-config)
 
 ## Description
 
